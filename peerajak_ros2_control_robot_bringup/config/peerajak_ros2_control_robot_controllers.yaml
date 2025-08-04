@@ -1,0 +1,36 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 50 #need to be integer
+    
+    # from github::ros2_controllers/joint_state_broadcaster
+    joint_state_broadcaster: #after start the controller, this will be a node
+      #from github::ros2_controllers/joint_state_broadcaster/joint_state_plugin.xml::class name
+      type: joint_state_broadcaster/JointStateBroadcaster
+        
+
+    diff_drive_controller: # may be other name #after start the controller, this will be a node
+      # from github::ros2_controllers/diff_driver_controller/diff_drive_plugin.xml::class name
+      type: diff_drive_controller/DiffDriveController 
+
+diff_drive_controller:
+  ros__parameters:
+    #from diff_driver_controller/src/diff_driver_controller_parameters.yaml
+    left_wheel_names: ["base_left_wheel_joint"] #joint name from xacro description file
+    right_wheel_names: ["base_right_wheel_joint"] #joint name from xacro description file
+
+    wheel_separation: 0.45 # xacro's 2(wheel_length/2 + base_width/2 )
+    wheel_radius: 0.1 #xacro's wheel_radius
+
+    odom_frame_id: "odom" #odom is the place where you start your robot
+    base_frame_id: "base_footprint"
+
+    pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01] #recommended by diff_driver_controller_parameters.yaml
+    twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01] #recommended by diff_driver_controller_parameters.yaml
+    
+    enable_odom_tf: true
+    publish_rate: 50.0 #need to be double
+
+    linear.x.max_valocity: 1.0
+    linear.x.min_velocity: -1.0
+    angular.z.max_velocity: 1.0
+    angular.z.min_velocity: -1.0
