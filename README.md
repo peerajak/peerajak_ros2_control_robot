@@ -177,9 +177,9 @@ Done 7. Write hardware interface for position controller
 Done 8. Build interface as plugin, and change the plugin in urdf from mock to real hardware
 Done 9. Test everything.
 
-![alt text](peerajak_ros2_control_robot_realhardware1.png)
-![alt text](peerajak_ros2_control_robot_realhardware2.png)
-![alt text](peerajak_ros2_control_robot_realhardware3.png)
+![alt text](peerajak_ros2_control_robot_realhardware1.jpg)
+![alt text](peerajak_ros2_control_robot_realhardware2.jpg)
+![alt text](peerajak_ros2_control_robot_realhardware3.jpg)
 
 
 
