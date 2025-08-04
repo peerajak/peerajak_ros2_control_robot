@@ -3,22 +3,20 @@
 
     <ros2_control name="Arm" type="system">
         <hardware>
-            <plugin>mock_components/GenericSystem</plugin>
-            <param name="calculate_dynamics">true</param> 
+            <!-- plugin>mock_components/GenericSystem</plugin>
+            <param name="calculate_dynamics">true</param --> 
+            <plugin>arm_hardware/ArmHardwareInterface</plugin>
+            <param name="first_motor_id">10</param>
+            <param name="second_motor_id">20</param>
+            <param name="dynamixel_port">/dev/ttyACM0</param>
         </hardware>
 
         <joint name="arm_joint1">
-            <command_interface name="position">
-              <param name="min">0.0</param>
-              <param name="max">1.57</param>
-            </command_interface>
+            <command_interface name="position"/>
             <state_interface name="position" />
         </joint>
         <joint name="arm_joint2">
-            <command_interface name="position">
-              <param name="min">0.0</param>
-              <param name="max">1.57</param>
-            </command_interface>
+            <command_interface name="position"/>
             <state_interface name="position" />
         </joint>
     </ros2_control>

@@ -166,16 +166,18 @@ Done 6. Test mock robot_arm controller to gether with mock mobile base
 Test robot_arm on mock hardware
 
 ```
-ros2 topic pub /arm_joints_controller/commands std_msgs/msg/Float64MultiArray "{data: [0.0,0.0]}"
+ros2 topic pub /arm_joints_controller/commands std_msgs/msg/Float64MultiArray "{data: [1.57,1.57]}"
 ```
 
 Result
 
 ![alt text](mocked_robot_arm.png)
 
-7. Write hardware interface for position controllre
-8. Build interface as plugin, and change the plugin in urdf from mock to real hardware
-9. Test everything.
+Done 7. Write hardware interface for position controller
+Done 8. Build interface as plugin, and change the plugin in urdf from mock to real hardware
+Done 9. Test everything.
+
+
 
 
 
