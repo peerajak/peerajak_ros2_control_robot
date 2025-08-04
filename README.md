@@ -152,3 +152,30 @@ Hardware Component 1
 		base_right_wheel_joint/velocity [available] [claimed]
 		base_left_wheel_joint/velocity [available] [claimed]
 ```
+
+
+### Plan for robot arm
+
+Done 1. Change mobile base robot from real hardware to mock hardware
+Done 2. Add robot arm to mobile base robot in urdf
+Done 3. Add ros2 control tag for robot arm to urdf
+Done 4. Add mockup controller for robot arm by modifiying yaml config file inside bringup package
+Done 5. Add a launch file for robot_arm bringup
+Done 6. Test mock robot_arm controller to gether with mock mobile base
+
+Test robot_arm on mock hardware
+
+```
+ros2 topic pub /arm_joints_controller/commands std_msgs/msg/Float64MultiArray "{data: [0.0,0.0]}"
+```
+
+Result
+
+![alt text](mocked_robot_arm.png)
+
+7. Write hardware interface for position controllre
+8. Build interface as plugin, and change the plugin in urdf from mock to real hardware
+9. Test everything.
+
+
+

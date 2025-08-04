@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <ros2_control name="MobileBase" type="system">
+    <ros2_control name="MobileBaseOnly" type="system">
         <hardware>
-            <!-- <plugin>mock_components/GenericSystem</plugin>
-            <param name="calculate_dynamics">true</param> -->
-            <plugin>mobile_base_hardware/MobileBaseHardwareInterface</plugin>
+            <plugin>mock_components/GenericSystem</plugin>
+            <param name="calculate_dynamics">true</param> 
+            <!-- plugin>mobile_base_hardware/MobileBaseHardwareInterface</plugin>
             <param name="left_motor_id">10</param>
             <param name="right_motor_id">20</param>
-            <param name="dynamixel_port">/dev/ttyACM0</param>
+            <param name="dynamixel_port">/dev/ttyACM0</param -->
         </hardware>
 
         <joint name="base_right_wheel_joint">

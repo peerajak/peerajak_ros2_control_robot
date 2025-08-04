@@ -12,6 +12,9 @@ controller_manager:
       # from github::ros2_controllers/diff_driver_controller/diff_drive_plugin.xml::class name
       type: diff_drive_controller/DiffDriveController 
 
+    arm_joints_controller: # my choice
+      type: forward_command_controller/ForwardCommandController # from github::ros2_controllers/forward_command_controller
+
 diff_drive_controller:
   ros__parameters:
     #from diff_driver_controller/src/diff_driver_controller_parameters.yaml
@@ -34,3 +37,8 @@ diff_drive_controller:
     linear.x.min_velocity: -1.0
     angular.z.max_velocity: 1.0
     angular.z.min_velocity: -1.0
+
+arm_joints_controller:
+  ros__parameters:
+    interface_name: "position"
+    joints: ["arm_joint1","arm_joint2"]

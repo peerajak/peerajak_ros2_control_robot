@@ -41,17 +41,26 @@ def generate_launch_description():
         arguments=["diff_drive_controller"],
     )
 
+    arm_joints_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["arm_joints_controller"],#name of the args is from yaml file that we arbitarily choose
+    )
+
     rviz_node = Node(
         package="rviz2",
         executable="rviz2",
         name="rviz2",
         arguments=["-d", rviz_config_path],
     )
+
+    
  
     return LaunchDescription([
         robot_state_publisher_node,
         control_node,
         joint_state_broadcaster_spawner,
         diff_drive_controller_spawner,
+        arm_joints_controller_spawner,
         rviz_node,
     ])
