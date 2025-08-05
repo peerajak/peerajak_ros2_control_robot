@@ -19,10 +19,10 @@
     <node pkg="controller_manager" exec="spawner" args="diff_drive_controller" />
     
     <!-- use buid in arm_joints_controller-->
-    <node pkg="controller_manager" exec="spawner" args="arm_joints_controller" /> <!-- name of the args is from yaml file that we arbitarily choose-->
+    <!--node pkg="controller_manager" exec="spawner" args="arm_joints_controller" /--> <!-- name of the args is from yaml file that we arbitarily choose-->
 
     <!-- use custom build my_arm_controller-->
-    <!-- node pkg="controller_manager" exec="spawner" args="my_arm_controller" /-->
+    <node pkg="controller_manager" exec="spawner" args="my_arm_controller" />
 
 
     <node pkg="rviz2" exec="rviz2" output="screen" 

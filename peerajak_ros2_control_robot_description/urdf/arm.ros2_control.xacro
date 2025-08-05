@@ -3,8 +3,8 @@
 
     <ros2_control name="Arm" type="system">
         <hardware>
-            <!-- plugin>mock_components/GenericSystem</plugin>
-            <param name="calculate_dynamics">true</param --> 
+            <!-- <plugin>mock_components/GenericSystem</plugin>
+            <param name="calculate_dynamics">true</param> -->
             <plugin>arm_hardware/ArmHardwareInterface</plugin>
             <param name="first_motor_id">10</param>
             <param name="second_motor_id">20</param>

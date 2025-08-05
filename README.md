@@ -154,7 +154,7 @@ Hardware Component 1
 ```
 
 
-### Plan for robot arm
+### DIY Ros2_control but use controller
 
 Done 1. Change mobile base robot from real hardware to mock hardware
 Done 2. Add robot arm to mobile base robot in urdf
@@ -181,5 +181,22 @@ Done 9. Test everything.
 ![alt text](peerajak_ros2_control_robot_realhardware2.jpg)
 ![alt text](peerajak_ros2_control_robot_realhardware3.jpg)
 
+
+
+### DIY ros2_controller
+
+- launch file
+
+```
+ros2 launch peerajak_ros2_control_robot_bringup peerajak_ros2_control_robot_custom_controller.launch.xml
+```
+
+- test the movement with real robot 
+
+```
+ros2 topic pub -1 /joints_command example_interfaces/msg/Float64MultiArray "{data: [1.5,1.5]}"
+```
+
+Movement of the real motor is expected to be quite slow. 
 
 

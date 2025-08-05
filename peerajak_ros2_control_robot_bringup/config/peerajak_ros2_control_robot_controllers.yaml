@@ -15,6 +15,9 @@ controller_manager:
     arm_joints_controller: # my choice
       type: forward_command_controller/ForwardCommandController # from github::ros2_controllers/forward_command_controller
 
+    my_arm_controller:
+      type: my_controller/MyController
+
 diff_drive_controller:
   ros__parameters:
     #from diff_driver_controller/src/diff_driver_controller_parameters.yaml
@@ -42,3 +45,9 @@ arm_joints_controller:
   ros__parameters:
     interface_name: "position"
     joints: ["arm_joint1","arm_joint2"]
+
+my_arm_controller:
+  ros__parameters:
+    joints: ["arm_joint1", "arm_joint2"]
+    interface_name: "position"
+    coefficient: 0.05
